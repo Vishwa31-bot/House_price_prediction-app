@@ -14,12 +14,3 @@ Built with: Streamlit, Pandas, pure Python
 
 🚀 Try it Online
 👉 Try Now
-
-📦 Run Locally
-bash
-Copy
-Edit
-git clone https://github.com/your-username/house-price-predictor.git
-cd house-price-predictor
-pip install -r requirements.txt
-streamlit run app.py
