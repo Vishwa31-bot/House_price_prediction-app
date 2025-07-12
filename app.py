@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 
 # Title
-st.title("🏠 House Price Prediction App (India ₹)")
+st.title
 st.write("यह एप्लीकेशन area के हिसाब से घर की कीमत का अनुमान लगाएगी।")
 
 # Load data
