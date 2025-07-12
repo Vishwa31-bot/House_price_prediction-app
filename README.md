@@ -13,4 +13,4 @@ Dataset: Basic house price data (modifiable for larger use cases)
 Built with: Streamlit, Pandas, pure Python
 
 🚀 Try it Online
-👉 Try Now
+👉 https://housepriceprediction-app-gi3wqgbxxfyncjgfdfq38n.streamlit.app/
