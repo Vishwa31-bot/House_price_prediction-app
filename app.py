@@ -4,7 +4,7 @@ import numpy as np
 from sklearn.linear_model import LinearRegression
 
 # डेटा लोड करें
-df = pd.read_csv("house_price_india.csv")
+df = pd.read_csv("house_price.csv")
 
 # Streamlit UI
 st.title("🏠 House Price Prediction (INR)")
