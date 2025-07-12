@@ -1,37 +1,28 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+from sklearn.linear_model import LinearRegression
 
-st.title("🏠 House Price Prediction (₹ India)")
-st.markdown("### Enter Area (Sq Ft) to predict estimated house price")
+# डेटा लोड करें
+df = pd.read_csv("house_price_india.csv")
 
-# CSV file read
-df = pd.read_csv("house_price.csv")
+# Streamlit UI
+st.title("🏠 House Price Prediction (INR)")
 
-# Display sample data
-st.subheader("📊 Sample Data from house_price.csv")
-st.dataframe(df)
+area = st.slider("Area (sq ft)", 500, 5000, 1500)
+bhk = st.selectbox("Number of BHK", [1, 2, 3, 4, 5])
+bath = st.selectbox("Number of Bathrooms", [1, 2, 3, 4])
+loc = st.selectbox("Location", df['Location'].unique())
 
-# Linear regression calculation (manual)
-X = df['Area'].values
-y = df['Price'].values
-
-# Mean
-mean_x = np.mean(X)
-mean_y = np.mean(y)
-
-# Slope (m) and Intercept (c)
-n = len(X)
-numer = np.sum((X - mean_x) * (y - mean_y))
-denom = np.sum((X - mean_x)**2)
-
-m = numer / denom
-c = mean_y - m * mean_x
-
-# User input
-area_input = st.number_input("📐 Enter Area (in Sq Ft)", min_value=100, max_value=10000, value=1000)
+# मॉडल ट्रेन करें
+X = df[['Area (sq ft)', 'BHK', 'Bathroom']]
+y = df['Price (INR)']
+model = LinearRegression()
+model.fit(X, y)
 
 # Prediction
-predicted_price = m * area_input + c
+input_data = pd.DataFrame([[area, bhk, bath]], columns=['Area (sq ft)', 'BHK', 'Bathroom'])
+predicted_price = model.predict(input_data)[0]
 
-st.success(f"🧮 Predicted Price: ₹ {round(predicted_price):,}")
+st.subheader("Predicted Price:")
+st.success(f"₹ {int(predicted_price):,}")
