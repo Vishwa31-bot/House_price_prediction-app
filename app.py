@@ -7,7 +7,7 @@ st.title("🏠 House Price Prediction App (India ₹)")
 st.write("यह एप्लीकेशन area के हिसाब से घर की कीमत का अनुमान लगाएगी।")
 
 # Load data
-df = pd.read_csv("house_price_india.csv")
+df = pd.read_csv("house_price.csv")
 
 # Show data
 st.subheader("📊 Sample Data")
