@@ -1,4 +1,4 @@
-#House Price Prediction
+# House Price Prediction
 
 🏠 House Price Prediction App
 A simple yet powerful web app that predicts house prices (in INR) based on the area in square feet using a custom-built regression model.
