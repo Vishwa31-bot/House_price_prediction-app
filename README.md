@@ -16,3 +16,8 @@ Built with: Streamlit, Pandas, pure Python
 
 🚀 Try it Online
 👉 https://housepriceprediction-app-gi3wqgbxxfyncjgfdfq38n.streamlit.app/
+
+Output:
+
+<img width="931" height="728" alt="image" src="https://github.com/user-attachments/assets/96abc9f9-da5f-4a31-9094-14bff75a311e" />
+
